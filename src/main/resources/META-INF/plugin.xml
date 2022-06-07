@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.vampire.haskell.language</id>
+    <name>Haskell Syntax Highlighting</name>
+    <depends>com.intellij.modules.platform</depends>
+
+    <description>
+        <![CDATA[
+      Haskell Syntax Highlighting.
+      Adds syntax highlighting support for Haskell (.hs).
+      <br>
+    ]]>
+    </description>
+    <change-notes>
+        <![CDATA[
+      <ul>
+        <li><b>0.1.0</b> Haskell Syntax Highlighting.</li>
+      </ul>
+    ]]>
+    </change-notes>
+
+    <vendor url="https://hoangpq.github.io">Hoang Phan</vendor>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Haskell" implementationClass="com.vampire.haskell.language.HaskellFileType"
+                  fieldName="INSTANCE"
+                  language="HaskellLanguage" extensions="hs"/>
+
+        <lang.parserDefinition
+                language="HaskellLanguage"
+                implementationClass="com.vampire.haskell.language.HaskellParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory
+                language="HaskellLanguage"
+                implementationClass="com.vampire.haskell.language.HaskellSyntaxHighlighterFactory"/>
+
+    </extensions>
+
+</idea-plugin>
